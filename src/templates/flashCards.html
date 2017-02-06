@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="panel-body" ng-controller="flipCtrl">
+        <div class="flip">
+            <div class="card" ng-class="{'flipped':isFlipped}" ng-click="isFlipped=!isFlipped;speakVoice()">
+                <div class="face front">
+                    {{englishPhrase}}
+                </div>
+                <div class="face back">
+                    {{germanPhrase}}
+                </div>
+            </div>
+        </div>
+        <div class="nav_ctrls">
+            <hr/>
+            <div class="buttons">
+                <button type="button" ng-disabled="!isFlipped || isCategoryEnded()" ng-click="isFlipped=!isFlipped;getNextPhrase('5')" class="btn btn-danger">Hard</button>
+                <button type="button" ng-disabled="!isFlipped || isCategoryEnded()" ng-click="isFlipped=!isFlipped;getNextPhrase('3')" class="btn btn-warning">Bad</button>
+                <button type="button" ng-disabled="!isFlipped || isCategoryEnded()" ng-click="isFlipped=!isFlipped;getNextPhrase('3')" id="avgButton" class="btn btn-default">Average</button>
+                <button type="button" ng-disabled="!isFlipped || isCategoryEnded()" ng-click="isFlipped=!isFlipped;getNextPhrase('2')" id="goodButton" class="btn btn-default">Good</button>
+                <button type="button" ng-disabled="!isFlipped || isCategoryEnded()" ng-click="isFlipped=!isFlipped;getNextPhrase('1')" class="btn btn-success">Easy</button>
+            </div>
+        </div>
+        <hr/>
+        <div ng-hide="isFlipped" class="flipButton">
+            <button type="button" class="btn btn-primary" ng-click="isFlipped=!isFlipped;speakVoice()">Flip</a>
+        </div>
+    </div>
+</div>

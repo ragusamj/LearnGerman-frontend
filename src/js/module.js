@@ -1,0 +1,1 @@
+angular.module('LearnGerman', ['ui.bootstrap', 'ui.router', 'ngCookies']);

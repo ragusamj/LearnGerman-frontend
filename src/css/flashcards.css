@@ -1,0 +1,79 @@
+.panel-body {
+    background-color: #efefef;
+    padding: 10px;
+}
+
+.flip {
+    -webkit-perspective: 800;
+    width: 100%;
+    height: 512px;
+    position: relative;
+    margin: 50px auto;
+}
+
+.flip .card.flipped {
+    -webkit-transform: rotatex(-180deg);
+}
+
+.flip .card {
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+}
+
+.flip .card .face {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    z-index: 2;
+    font-family: Georgia;
+    font-size: 3em;
+    text-align: center;
+    line-height: 512px;
+}
+
+.flip .card .front {
+    position: absolute;
+    z-index: 1;
+    background: #3f3f3f;
+    color: white;
+    cursor: pointer;
+}
+
+.flip .card .back {
+    -webkit-transform: rotatex(-180deg);
+    background: blue;
+    background: white;
+    color: #3f3f3f;
+    cursor: pointer;
+}
+
+.buttons {
+    position: fixed;
+    width: 30em;
+    height: 18em;
+    margin-top: 3em;
+    /*set to a negative number 1/2 of your height*/
+    margin-left: 42em;
+}
+
+#goodButton {
+    background-color: #8fc642;
+    color: white
+}
+
+#avgButton {
+    background-color: #e8c224;
+    color: white
+}
+
+.flipButton {
+    position: fixed;
+    width: 30em;
+    height: 18em;
+    margin-top: 6em;
+    /*set to a negative number 1/2 of your height*/
+    margin-left: 51em;
+}

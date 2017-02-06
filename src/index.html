@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en" ng-app="LearnGerman">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>LearnGerman</title>
+    <!-- STYLES -->
+    <!-- build:css lib/css/main.min.css -->
+    <link rel="stylesheet" type="text/css" href="components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="components/rdash-ui/dist/css/rdash.min.css">
+    <link rel="stylesheet" type="text/css" href="css/flashcards.css">
+    <!-- endbuild -->
+    <!-- SCRIPTS -->
+    <!-- build:js lib/js/main.min.js -->
+    <script type="text/javascript" src="components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="components/angular-cookies/angular-cookies.min.js"></script>
+    <script type="text/javascript" src="components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- endbuild -->
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="js/dashboard.min.js"></script>
+    <script type="text/javascript" src="js/controllers/flipCtrl.js"></script>
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+</head>
+
+<body ng-controller="MasterCtrl">
+    <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+            <ul class="sidebar">
+                <li class="sidebar-main">
+                    <a ng-click="toggleSidebar()">
+            Learn German
+            <span class="menu-icon glyphicon glyphicon-transfer"></span>
+          </a>
+                </li>
+                <li class="sidebar-list">
+                    <a href="#">Audio Lessons <span class="menu-icon fa fa-volume-up"></span></a>
+                </li>
+                <li class="sidebar-list">
+                    <a href="#/flashCards">Flash Cards <span class="menu-icon fa fa-file"></span></a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <div class="col-xs-4">
+                    <a href="https://github.com/rdash/rdash-angular" target="_blank">
+            Github
+          </a>
+                </div>
+                <div class="col-xs-4">
+                    <a href="https://github.com/rdash/rdash-angular/blob/master/README.md" target="_blank">
+           Theme Credits
+          </a>
+                </div>
+            </div>
+        </div>
+        <!-- End Sidebar -->
+
+        <div id="content-wrapper">
+            <div class="page-content">
+
+                <!-- Header Bar -->
+                <div class="row header">
+                    <div class="col-xs-12">
+                        <div class="user pull-right">
+                            <div class="item dropdown" uib-dropdown>
+                                <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
+                                    <img src="img/avatar.jpg">
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-header">
+                                        Joe Bloggs
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="link">
+                                        <a href="#">
+                      Profile
+                    </a>
+                                    </li>
+                                    <li class="link">
+                                        <a href="#">
+                      Menu Item
+                    </a>
+                                    </li>
+                                    <li class="link">
+                                        <a href="#">
+                      Menu Item
+                    </a>
+                                    </li>
+                                    <li class="divider"></li>
+                                    <li class="link">
+                                        <a href="#">
+                      Logout
+                    </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="meta">
+                            <div class="page">
+                                Learn German
+                            </div>
+                            <div class="breadcrumb-links">
+                                Home / Dashboard
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Header Bar -->
+
+                <!-- Main Content -->
+                <div ui-view></div>
+
+            </div>
+            <!-- End Page Content -->
+        </div>
+        <!-- End Content Wrapper -->
+    </div>
+    <!-- End Page Wrapper -->
+</body>
+
+</html>
