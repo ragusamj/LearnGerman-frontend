@@ -15,9 +15,13 @@ angular.module('LearnGerman').config(['$stateProvider', '$urlRouterProvider',
                 url: '/',
                 templateUrl: 'templates/dashboard.html'
             })
-            .state('flashCard', {
-                url: '/flashCards',
+            .state('flashCards', {
+                url: '/flashCards/:category',
                 templateUrl: 'templates/flashCards.html'
+            })
+            .state('flashCardDashboard', {
+                url: '/flashCardDashboard',
+                templateUrl: 'templates/flashCardDashboard.html'
             });
     }
 ]);

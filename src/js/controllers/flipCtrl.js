@@ -1,7 +1,7 @@
 angular
     .module('LearnGerman')
-    .controller('flipCtrl', ['$log', '$scope', 'apiFactory', '$window',
-        function flipCtrl($log, $scope, apiFactory, $window) {
+    .controller('flipCtrl', ['$log', '$scope', 'apiFactory', '$window', '$stateParams',
+        function flipCtrl($log, $scope, apiFactory, $window, $stateParams) {
 
             var index = 1;
             $scope.germanPhrase = "";
@@ -11,13 +11,13 @@ angular
             getPhrasesByCategory();
 
             function getPhrasesByCategory() {
-                apiFactory.get(urlBase + "/phrases/getPhrases/Talking%20about%20yourself")
+                apiFactory.get(urlBase + "/phrases/getPhrases/" + $stateParams.category)
                     .then(function (response) {
                         $scope.phrases = response.data.record;
                         $scope.germanPhrase = response.data.record[0].germanPhrase;
                         $scope.englishPhrase = response.data.record[0].englishPhrase;
                     }, function (error) {
-                        $log.debug("Get Phrases By Category Call Failed " + urlBase + "/phrases/getPhrases/Talking%20about%20yourself");
+                        $log.debug("Get Phrases By Category Call Failed " + urlBase + "/phrases/getPhrases/" + $scope.category);
                     });
             }
 

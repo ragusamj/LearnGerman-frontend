@@ -1,0 +1,10 @@
+<div class="row alerts-container" data-ng-controller="flashCardDashboardCtrl">
+    <div class="row col-xs-12">
+        <h4>Modules</h4>
+        <div ng-repeat="category in categories">
+            <div>
+                <a ng-href="{{getLink(category)}}">{{category}}</a>
+            </div>
+        </div>
+    </div>
+</div>
